@@ -38,7 +38,6 @@
 4. `ip`:当设置为ip指定的ip地址，此时限制ip进行访问，比如`ip:192.168.1.1:[permissions]`
 5. `super`:代表超级管理员，拥有所有权限
 ##### permissions
-<p>crdwa</p>
 1. `CREATE`:创建子节点
 2. `READ`:获取节点/子节点
 3. `DELETE`:删除子节点
