@@ -1,7 +1,7 @@
 # ZooKeeper分布式专题与Dubbo微服务入门
 
-### ZooKeeper Watch:
-#### 一.事件类型
+### 1.ZooKeeper Watch:
+#### 1-1.事件类型
 ##### 父节点：
 - `NodeCreated`
 - `NodeDataChanged`
@@ -11,12 +11,31 @@
   > 子节点的新增和删除都触发NodeChildrenChanged事件<br>
   > 子节点的修改不触发任何事件<br>
   > 针对子节点去修改，要把子节点当做父节点才能绑定事件
-  
-
-#### 二.watch使用场景
+#### 1-2.watch使用场景
 
 - 统一资源配置
 ![统一资源配置](https://raw.githubusercontent.com/WangPingChun/imooc-learn/master/ZooKeeper%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%93%E9%A2%98%E4%B8%8EDubbo%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%85%A5%E9%97%A8/note/images/watch-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE.png)
 
+### 2.ZooKeeper ACL:
+#### 2-1.命令行
+- `getAcl`:获取某个节点的acl权限信息
+- `setAcl`:设置某个节点的acl权限信息
+- `addauth`:输入认证授权信息，注册时输入明文密码（登录）但在zk的系统里，密码 是以加密的形式存在的
+#### 2-2.ACL的构成
+##### zk的acl通过[scheme:id:permissions]来构成权限列表
+- `scheme`:代表采用的某种权限机制
+- `id`:代表允许访问的用户
+- `permissions`:权限组合字符串
+
+##### scheme
+1. `world`: world下只有一个id，即只有一个用户，也就是anyone，那么组合的写法就是`world:anyone:[permissions]`
+2. `auth`:代表认证登录，需要注册用户有权限就可以,形式为`auth:user:password:[permissions]`
+3. `digest`:需要对密码加密才能访问，组合形式为`digest:username:BASE64(SHA1(password)):[permissions]`
+> auth与digest的区别就是，前者明文，后者密文<br>
+> `setAcl /path auth:lee:lee:cdrwa`
+> `setAcl /path digest:les:BASE64(SHA1(lee)):cdrwa`
+> 上面两个操作是等价的，在通过`addauth digest lee:lee`后都能操作指定节点的权限
+4. `ip`:当设置为ip指定的ip地址，此时限制ip进行访问，比如`ip:192.168.1.1:[permissions]`
+5. `super`:代表超级管理员，拥有所有权限
   
   
