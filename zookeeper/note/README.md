@@ -1,7 +1,7 @@
 # ZooKeeper分布式专题与Dubbo微服务入门
 
-### 1.ZooKeeper Watch:
-#### 1-1.事件类型
+### 1 ZooKeeper Watch:
+#### 1-1 事件类型
 ##### 父节点：
 - `NodeCreated`
 - `NodeDataChanged`
@@ -11,17 +11,17 @@
   > 子节点的新增和删除都触发NodeChildrenChanged事件<br>
   > 子节点的修改不触发任何事件<br>
   > 针对子节点去修改，要把子节点当做父节点才能绑定事件
-#### 1-2.watch使用场景
+#### 1-2 watch使用场景
 
 - 统一资源配置
 ![统一资源配置](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/watch-统一资源配置.png?raw=true)
 
-### 2.ZooKeeper ACL:
-#### 2-1.命令行
+### 2 ZooKeeper ACL:
+#### 2-1 命令行
 - `getAcl`:获取某个节点的acl权限信息
 - `setAcl`:设置某个节点的acl权限信息
 - `addauth`:输入认证授权信息，注册时输入明文密码（登录）但在zk的系统里，密码 是以加密的形式存在的
-#### 2-2.ACL的构成
+#### 2-2 ACL的构成
 ##### zk的acl通过「scheme:id:permissions」来构成权限列表
 - `scheme`:代表采用的某种权限机制
 - `id`:代表允许访问的用户
@@ -44,6 +44,17 @@
 4. `WRITE`:设置节点数据
 5. `ADMIN`:设置权限
 
-#### 2-3.ACL的常用使用场景
+#### 2-3 ACL的常用使用场景
 - 开发/测试环境分离，开发者无权操作测试库的节点，只能看
 - 生产环境上控制指定ip的服务可以访问相关节点，防止混乱
+
+### 3 ZooKeeper Four Letter Words:
+#### 3.1 简介
+- zk可以通过它自身提供的简写命令来和服务器进行交互
+- 需要使用到nc命令，需要安装:yum install nc
+- echo [command] | nc [ip] [port]
+
+#### 3.2 Four Letter Words
+1. `stat`:查看zk的状态信息，以及mode
+    > `echo stat | nc localhost 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-stat.png?raw=true)
