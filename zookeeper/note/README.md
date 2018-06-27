@@ -82,3 +82,11 @@
 9. `wchc``wchp`:session与watch及path与watch的信息
     > `echo wchc | nc 101.132.47.22 2181`
     > `echo wchp | nc 101.132.47.22 2181`
+    > whitelist
+    
+### 4 ZooKeeper 集群:
+#### 4.1 简介
+- zk集群，主从节点，心跳机制（选举模式）
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/zk-集群.png?raw=true)
+- 配置数据文件myid 1/2/3 对应 server.1/2/3
+- 通过./zkCli.sh -server [ip]:[port]检测集群是否配置成功
