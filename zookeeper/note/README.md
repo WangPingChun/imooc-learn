@@ -33,7 +33,7 @@
 3. `digest`:需要对密码加密才能访问，组合形式为`digest:username:BASE64(SHA1(password)):[permissions]`
 > auth与digest的区别就是，前者明文，后者密文<br>
 > `setAcl /path auth:lee:lee:cdrwa`
-> `setAcl /path digest:les:BASE64(SHA1(lee)):cdrwa`
+> `setAcl /path digest:les:BASE64(SHA1(lee)):cdrwa`</br>
 > 上面两个操作是等价的，在通过`addauth digest lee:lee`后都能操作指定节点的权限
 4. `ip`:当设置为ip指定的ip地址，此时限制ip进行访问，比如`ip:192.168.1.1:[permissions]`
 5. `super`:代表超级管理员，拥有所有权限
@@ -43,4 +43,7 @@
 3. `DELETE`:删除子节点
 4. `WRITE`:设置节点数据
 5. `ADMIN`:设置权限
-  
+
+#### 2-3.ACL的常用使用场景
+- 开发/测试环境分离，开发者无权操作测试库的节点，只能看
+- 生产环境上控制指定ip的服务可以访问相关节点，防止混乱
