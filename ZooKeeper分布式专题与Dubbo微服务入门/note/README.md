@@ -16,7 +16,7 @@
 #### 二.watch使用场景
 
 - 统一资源配置
-![](images\watch-统一资源配置.png)
+![统一资源配置](images\watch-统一资源配置.png)
 
   
   
