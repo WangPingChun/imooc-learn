@@ -62,14 +62,23 @@
     > `echo ruok | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-ruok.png?raw=true)
 3. `dump`:累出未经处理的会话和临时节点
-    > `echo ruok | dump 101.132.47.22 2181`
+    > `echo dump | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-dump.png?raw=true)
 4. `conf`:查看服务器配置
-    > `echo ruok | conf 101.132.47.22 2181`
+    > `echo conf | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-conf.png?raw=true)
 5. `cons`:展示连接到服务器的客户端信息
-    > `echo cons | dump 101.132.47.22 2181`
+    > `echo cons | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-cons.png?raw=true)
 6. `envi`:环境变量
-    > `echo envi | dump 101.132.47.22 2181`
+    > `echo envi | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-envi.png?raw=true)
+7. `mntr`:监控zk健康信息
+    > `echo mntr | nc 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-mntr.png?raw=true)
+8. `wchs`:展示watch的信息
+    > `echo wchs | nc 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-wchs.png?raw=true)
+9. `wchc``wchp`:session与watch及path与watch的信息
+    > `echo wchc | nc 101.132.47.22 2181`
+    > `echo wchp | nc 101.132.47.22 2181`
