@@ -56,5 +56,20 @@
 
 #### 3.2 Four Letter Words
 1. `stat`:查看zk的状态信息，以及mode
-    > `echo stat | nc localhost 2181`
+    > `echo stat | nc 101.132.47.22 2181`
     > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-stat.png?raw=true)
+2. `ruok`:查看当前zkserver是否启动，返回imok
+    > `echo ruok | nc 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-ruok.png?raw=true)
+3. `dump`:累出未经处理的会话和临时节点
+    > `echo ruok | dump 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-dump.png?raw=true)
+4. `conf`:查看服务器配置
+    > `echo ruok | conf 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-conf.png?raw=true)
+5. `cons`:展示连接到服务器的客户端信息
+    > `echo cons | dump 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-cons.png?raw=true)
+6. `envi`:环境变量
+    > `echo envi | dump 101.132.47.22 2181`
+    > ![](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/flw-envi.png?raw=true)
