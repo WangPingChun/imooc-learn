@@ -27,7 +27,7 @@
 - `id`:代表允许访问的用户
 - `permissions`:权限组合字符串
 
-##### scheme
+##### scheme和id
 1. `world`: world下只有一个id，即只有一个用户，也就是anyone，那么组合的写法就是`world:anyone:[permissions]`
 2. `auth`:代表认证登录，需要注册用户有权限就可以,形式为`auth:user:password:[permissions]`
 3. `digest`:需要对密码加密才能访问，组合形式为`digest:username:BASE64(SHA1(password)):[permissions]`
@@ -37,5 +37,11 @@
 > 上面两个操作是等价的，在通过`addauth digest lee:lee`后都能操作指定节点的权限
 4. `ip`:当设置为ip指定的ip地址，此时限制ip进行访问，比如`ip:192.168.1.1:[permissions]`
 5. `super`:代表超级管理员，拥有所有权限
-  
+##### permissions
+<p>crdwa</p>
+1. `CREATE`:创建子节点
+2. `READ`:获取节点/子节点
+3. `DELETE`:删除子节点
+4. `WRITE`:设置节点数据
+5. `ADMIN`:设置权限
   
