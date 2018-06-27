@@ -14,7 +14,7 @@
 #### 1-2.watch使用场景
 
 - 统一资源配置
-![统一资源配置](https://raw.githubusercontent.com/WangPingChun/imooc-learn/master/ZooKeeper%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%93%E9%A2%98%E4%B8%8EDubbo%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%85%A5%E9%97%A8/note/images/watch-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE.png)
+![统一资源配置](https://github.com/WangPingChun/imooc-learn/blob/master/zookeeper/note/images/watch-统一资源配置.png?raw=true)
 
 ### 2.ZooKeeper ACL:
 #### 2-1.命令行
@@ -22,7 +22,7 @@
 - `setAcl`:设置某个节点的acl权限信息
 - `addauth`:输入认证授权信息，注册时输入明文密码（登录）但在zk的系统里，密码 是以加密的形式存在的
 #### 2-2.ACL的构成
-##### zk的acl通过[scheme:id:permissions]来构成权限列表
+##### zk的acl通过「scheme:id:permissions」来构成权限列表
 - `scheme`:代表采用的某种权限机制
 - `id`:代表允许访问的用户
 - `permissions`:权限组合字符串
